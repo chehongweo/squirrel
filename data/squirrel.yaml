@@ -81,6 +81,60 @@ preset_color_schemes:
   native:
     name: 系統配色
 
+  apple_style:
+    name: Apple Style
+    author: chehongweo
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+    inline_candidate: false
+    show_paging: false
+    translucency: true
+    font_face: "PingFangSC-Regular"
+    font_point: 14
+    label_font_face: ".AppleSystemUIFont"
+    label_font_point: 11
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 12
+    back_color: 0x22FFFFFF
+    border_color: 0x00000000
+    candidate_text_color: 0x1D1D1F
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_candidate_back_color: 0xCCFF7A00
+    label_color: 0x1D1D1F
+    hilited_candidate_label_color: 0xFFFFFF
+    comment_text_color: 0x86868B
+    hilited_comment_text_color: 0xF2F2F7
+    text_color: 0x3A3A3C
+    hilited_text_color: 0x1D1D1F
+
+  apple_style_dark:
+    name: Apple Style Dark
+    author: chehongweo
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+    inline_candidate: false
+    show_paging: false
+    translucency: true
+    font_face: "PingFangSC-Regular"
+    font_point: 14
+    label_font_face: ".AppleSystemUIFont"
+    label_font_point: 11
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 12
+    back_color: 0x221C1C1E
+    border_color: 0x00000000
+    candidate_text_color: 0xF5F5F7
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_candidate_back_color: 0xCCFF7A00
+    label_color: 0x8E8E93
+    hilited_candidate_label_color: 0xFFFFFF
+    comment_text_color: 0x8E8E93
+    hilited_comment_text_color: 0xEBEBF0
+    text_color: 0x8E8E93
+    hilited_text_color: 0xF5F5F7
+
   aqua:
     name: 碧水／Aqua
     author: 佛振 <chen.sst@gmail.com>
