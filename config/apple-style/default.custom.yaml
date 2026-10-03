@@ -1,0 +1,57 @@
+# encoding: utf-8
+# 对齐 macOS 系统拼音：只留全拼、横向选字、轻点 Shift 不切中英。回车上屏原始英文。
+patch:
+  schema_list:
+    - schema: rime_ice
+
+  menu/page_size: 9
+
+  # 系统已用 Caps Lock 切 ABC。commit_code 会再切一次 ascii_mode，按一次变两次。
+  ascii_composer/good_old_caps_lock: false
+  ascii_composer/switch_key/Caps_Lock: noop
+  ascii_composer/switch_key/Shift_L: noop
+  ascii_composer/switch_key/Shift_R: noop
+
+  # 空字符串：以词定字不接管 [ ]，按系统拼音输出【】
+  key_binder/select_first_character: ""
+  key_binder/select_last_character: ""
+
+  selector/bindings:
+    Left: previous_candidate
+    Right: next_candidate
+    Up: previous_page
+    Down: next_page
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
+
+  key_binder/bindings:
+    - { when: composing, accept: "Shift+Tab", send: "Shift+Left" }
+    - { when: composing, accept: Tab, send: "Shift+Right" }
+    - { when: composing, accept: "Alt+Left", send: "Shift+Left" }
+    - { when: composing, accept: "Alt+Right", send: "Shift+Right" }
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    # Mac 上 Shift+[ 是 bracketleft+Shift，不会走到 punctuator 的 `{` → 「
+    - { when: always, accept: "Shift+bracketleft", send: braceleft }
+    - { when: always, accept: "Shift+bracketright", send: braceright }
+    - { when: always, toggle: ascii_punct, accept: "Control+Shift+3" }
+    - { when: always, toggle: ascii_punct, accept: "Control+Shift+numbersign" }
+    - { when: always, toggle: traditionalization, accept: "Control+Shift+4" }
+    - { when: always, toggle: traditionalization, accept: "Control+Shift+dollar" }
+    - { accept: KP_0, send: 0, when: composing }
+    - { accept: KP_1, send: 1, when: composing }
+    - { accept: KP_2, send: 2, when: composing }
+    - { accept: KP_3, send: 3, when: composing }
+    - { accept: KP_4, send: 4, when: composing }
+    - { accept: KP_5, send: 5, when: composing }
+    - { accept: KP_6, send: 6, when: composing }
+    - { accept: KP_7, send: 7, when: composing }
+    - { accept: KP_8, send: 8, when: composing }
+    - { accept: KP_9, send: 9, when: composing }
+    - { accept: KP_Decimal, send: period, when: composing }
+    - { accept: KP_Multiply, send: asterisk, when: composing }
+    - { accept: KP_Add, send: plus, when: composing }
+    - { accept: KP_Subtract, send: minus, when: composing }
+    - { accept: KP_Divide, send: slash, when: composing }
+    - { accept: KP_Enter, send: Return, when: composing }

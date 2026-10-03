@@ -1,0 +1,14 @@
+# encoding: utf-8
+# native 会用不透明 windowBackgroundColor 盖住玻璃，磨砂等于没开。
+# 色值是 0xAABBGGRR。
+patch:
+  status_icon/show: false
+  # 官方默认 VS Code 进西文；中文模式必须同时关掉 ascii_punct，否则逗号句号仍是英文
+  app_options/com.microsoft.VSCode:
+    ascii_mode: false
+    ascii_punct: false
+  app_options/com.microsoft.VSCode.helper:
+    ascii_mode: false
+    ascii_punct: false
+  style/color_scheme: apple_style
+  style/color_scheme_dark: apple_style_dark

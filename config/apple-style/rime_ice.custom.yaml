@@ -1,0 +1,16 @@
+# encoding: utf-8
+# 系统拼音候选里不夹 Emoji；F4 仍可临时打开。
+# Option+退格删除当前候选（Mac 上 Option 对应 Alt）。
+patch:
+  "switches/@1/reset": 0
+  "switches/@3/reset": 0
+  "editor/bindings/Alt+BackSpace": delete_candidate
+  "punctuator/half_shape/{": "「"
+  "punctuator/half_shape/}": "」"
+  # 与系统拼音键盘布局一致：VS Code 终端这类程序直接用按键上的字
+  "punctuator/half_shape/|": "｜"
+  "punctuator/half_shape/~": "～"
+  # 去掉 ^[a-z]+[.].+$，否则 hello. 会被当成网址，句号不走 。
+  "recognizer/patterns/url": "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$"
+  "engine/filters/+":
+    - lua_filter@*exact_input_first
